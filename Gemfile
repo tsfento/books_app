@@ -45,14 +45,15 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-   group :development, :test do
-    gem "debug", platforms: %i[ mri mingw x64_mingw ]
-    gem 'rspec-rails'
-    gem 'factory_bot_rails'
-    gem 'faker'
-  end
-  gem 'blueprinter'
-
-  gem 'rack-cors'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 
 end
+ gem 'blueprinter'
+
+ gem 'rack-cors'
+
+ gem 'bcrypt'
+
+ gem 'jwt'
