@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :update, :destroy]
+  before_action :authenticate_request, except: [:index, :show]
 
   # GET /books
   def index
@@ -14,7 +14,7 @@ class BooksController < ApplicationController
 
   # POST /books
   def create
-    @book = Book.new(book_params)
+    @book = @current_user.books.new(book_params)
     if @book.save
       render json: BooksBlueprint.render(@book, view: :normal), status: :created
     else
