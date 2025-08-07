@@ -41,7 +41,7 @@ group :production do
 end
 
 group :development, :test do
-  gem "sqlite3", "~> 1.4"
+  gem "sqlite3", ">= 2.1"
   #removed squlite 3 on line 6 and tried running bundle install and couldn't continue
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
