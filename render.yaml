@@ -1,0 +1,22 @@
+databases:
+  - name: books_app_maggie
+    databaseName: books_app_maggie
+    user: books_app_maggie
+    plan: free
+
+services:
+  - type: web
+    name: books_app_maggie
+    runtime: ruby
+    plan: free
+    buildCommand: './bin/render-build.sh'
+    startCommand: './bin/rails server'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: books_app_maggie
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2
