@@ -37,12 +37,12 @@ gem "thruster", require: false
 
 
 group :production do
-  gem 'pg'
+  gem "pg"
 end
 
 group :development, :test do
+  # removed squlite 3 on line 6 and tried running bundle install and couldn't continue
   gem "sqlite3", ">= 2.1"
-  #removed squlite 3 on line 6 and tried running bundle install and couldn't continue
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -53,16 +53,14 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'faker'
-
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
 end
- gem 'blueprinter'
+ gem "blueprinter"
 
- gem 'rack-cors'
+ gem "rack-cors"
 
- gem 'bcrypt'
+ gem "bcrypt"
 
- gem 'jwt'
-
+ gem "jwt"
